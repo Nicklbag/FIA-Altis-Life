@@ -498,5 +498,14 @@ switch (_code) do
 		closeDialog 0;
 		_handled = false;
 	};
+	//Shift+P = Faded Sound
+	case 25:
+	{
+		if(_shift) then
+	{
+		[] call life_fnc_fadeSound;
+		_handled = true;
+	};
+};
 };
 _handled;

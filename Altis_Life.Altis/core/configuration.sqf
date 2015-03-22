@@ -100,6 +100,7 @@ life_drugged_cocaine = -1;
 life_drugged_cocaine_duration = 10; 
 life_drugged_weed = -1;
 life_drugged_weed_duration = 3;
+life_fadeSound = false; 
 
 life_vehicles = [];
 bank_robber = [];

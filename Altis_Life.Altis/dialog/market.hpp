@@ -11,7 +11,7 @@ class Market
 		{
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
 			idc = -1;
-			text = "SealDrop Börse";
+			text = "Börse";
 			x = 0.1;
 			y = 0.2;
 			w = 0.7;
