@@ -23,6 +23,12 @@ enableEnvironment true;
 setTerrainGrid 45;
 StartProgress = true;
 
+//Tempomat
+[] spawn
+{
+waitUntil {!isNil "mod_cruiseControl"};
+call mod_cruiseControl;
+}; 
 
 //Scheiß Nebel hau ab
 [] spawn {
