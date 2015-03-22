@@ -1,10 +1,7 @@
 To Do List:
 
-2. Sirene für Cops (Z.B ,,Hier spricht die Polizei, fahren Sie sofort rechts ran und schalten Sie Ihren Motor aus!)
-Wanted+ #Wichtig
-Cop Shops nach Rang 
-Medic Shop verbessern (Besseren Rucksack)#Wichtig
-Schmerzmittel (Leicht, Mittelstark, Start) Heilt von z.b 66% auf 100%
-Medics und ADAC zusammen tun #2.Stelle
-Medics können Strafzettel ausstellen
-Medic Rang System(3. Ränge) Jeder andere fahrzeuge und Paychecks   #2. Stelle
+- Radio Rausnehmen ?
+- Tempomat Testen 
+- DJ NPC Einbauen 
+- Heli Taxi 
+- Cop Sirenen
