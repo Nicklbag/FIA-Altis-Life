@@ -386,6 +386,7 @@ player createDiarySubject ["Tastaturbelegung","Steuerung"];
 				Left Shift + O: Civ Restrain<br/>
 				Left Shift + Space: Springen<br/>
 				Left Shift + H: Waffe Holstern<br/>
+				Left Shift + P: Ohrenstöpsel<br>
 				Left Windows: Housing option<br/>
 				Left Windows: Farmen an Feldern<br/>
 				Left Windows: Spieler Interaktionsmenü<br/>
