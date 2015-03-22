@@ -377,6 +377,7 @@ player createDiarySubject ["Tastaturbelegung","Steuerung"];
 				Ä: Cop Schranken öffnen<br/>
 				O: Cops Nagelbänder legen<br/>
 				^: Spitzhacke<br/>
+				Left Shift + P: Ohrenstöpsel 
 				Left Shift + 1: Telefon<br/>
 				Left Shift + 2: WantedList<br/>
 				Left Shift + 3: Anzeige erstatten<br/>
