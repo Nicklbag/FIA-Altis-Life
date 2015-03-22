@@ -5,3 +5,5 @@ To Do List:
 - DJ NPC Einbauen 
 - Heli Taxi 
 - Cop Sirenen
+- Hunting Script einbauen
+- Schutzsirene
