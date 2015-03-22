@@ -16,11 +16,6 @@ _list = _display displayCtrl 2401;
 lbClear _list;
 _units = [];
 
-ctrlSetText[2404,"Establishing connection..."];
-
-if(__GETC__(life_coplevel) < 3 && __GETC__(life_adminlevel) == 0) then
-{
-	ctrlShow[2405,false];
-};
+ctrlSetText[2404,"Verbindung herstellen..."];
 
 [[player],"life_fnc_wantedFetch",false,false] spawn life_fnc_MP;

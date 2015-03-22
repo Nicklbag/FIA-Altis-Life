@@ -17,5 +17,3 @@ if(_val == _total) then
 {
 	titleText[format[localize "STR_Cop_BountyKill",[_val] call life_fnc_numberText,[_total] call life_fnc_numberText],"PLAIN"];
 };
-
-life_atmcash = life_atmcash + _val;

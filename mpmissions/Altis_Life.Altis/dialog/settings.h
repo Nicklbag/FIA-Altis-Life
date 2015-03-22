@@ -51,7 +51,7 @@ class SettingsMenu
 		class RevealNearestHeader : PlayerTagsHeader
 		{
 			idc = -1;
-			text = "Reveal Nearest Objects";
+			text = "Zeige Nahe Objekte";
 			
 			y = 0.53;
 		};
@@ -166,7 +166,7 @@ class SettingsMenu
 		class PlayerTagsONOFF : Life_RscActiveText
 		{
 			text = "ON";
-			tooltip = "$STR_GUI_PlayTags";
+			tooltip = "Entfernt die Spielernamen wenn die Option Deaktiviert ist.";
 			idc = 2970;
 			sizeEx = 0.04;
 			x = 0.65;
@@ -184,7 +184,7 @@ class SettingsMenu
 		
 		class RevealONOFF : PlayerTagsONOFF
 		{
-			tooltip = "$STR_GUI_PlayerReveal";
+			tooltip = "Erhöht die Performance bei aktivierung.";
 			idc = 2972;
 			y = 0.53;
 		};

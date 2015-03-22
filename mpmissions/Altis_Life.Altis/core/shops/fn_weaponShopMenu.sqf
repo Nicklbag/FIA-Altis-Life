@@ -19,7 +19,7 @@ ctrlSetText[38401,_config select 0];
 _filters = ((findDisplay 38400) displayCtrl 38402);
 lbClear _filters;
 
-_filters lbAdd localize "STR_Shop_Weapon_ShopInv";
-_filters lbAdd localize "STR_Shop_Weapon_YourInv";
+_filters lbAdd "Laden";
+_filters lbAdd "Inventar";
 
 _filters lbSetCurSel 0;

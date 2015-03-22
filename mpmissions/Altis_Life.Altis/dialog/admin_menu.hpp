@@ -79,5 +79,35 @@ class life_admin_menu {
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
+		
+		class Spectate : Life_RscButtonMenu {
+			idc = -1;
+			text = "$STR_Admin_Spectate";
+			onButtonClick = "closeDialog 0; [] call life_fnc_adminSpectate;";
+			x = 0.26 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			y = 0.88 - (1 / 25);
+			w = (6.25 / 40);
+			h = (1 / 25);
+		};
+		
+		class Teleport : Life_RscButtonMenu {
+			idc = -1;
+			text = "$STR_Admin_Teleport";
+			onButtonClick = "closeDialog 0; [] call life_fnc_adminTeleport; hint 'Select where you would like to teleport';";
+			x = 0.42 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			y = 0.88 - (1 / 25);
+			w = (6.25 / 40);
+			h = (1 / 25);
+		};
+		
+		class TeleportHere : Life_RscButtonMenu {
+			idc = -1;
+			text = "$STR_Admin_TpHere";
+			onButtonClick = "[] call life_fnc_adminTpHere;";
+			x = 0.58 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
+			y = 0.88 - (1 / 25);
+			w = (6.25 / 40);
+			h = (1 / 25);
+		};
 	};
 };

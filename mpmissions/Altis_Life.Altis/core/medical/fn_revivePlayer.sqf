@@ -33,17 +33,17 @@ _cP = 0.01;
 //Lets reuse the same thing!
 while {true} do
 {
-	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
-		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
-		player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
+	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic1") then {
+		[[player,"ainvpknlmstpsnonwnondnon_medic1","ainvpknlmstpsnonwnondnon_medic2","ainvpknlmstpsnonwnondnon_medic3","ainvpknlmstpsnonwnondnon_medic4","ainvpknlmstpsnonwnondnon_medic5"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
+		player playMoveNow "ainvpknlmstpsnonwnondnon_medic5";
 	};
 	sleep 0.15;
 	_cP = _cP + 0.01;
 	_progressBar progressSetPosition _cP;
 	_titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
 	if(_cP >= 1 OR !alive player) exitWith {};
-	if(life_istazed) exitWith {}; //Tazed
-	if(life_interrupted) exitWith {};
+	if(life_istazed) exitWith {hint "Vorgang abgebrochen"}; //Tazed
+	if(life_interrupted) exitWith {hint "Vorgang abgebrochen"};
 	if((player getVariable["restrained",false])) exitWith {};
 	if(player distance _target > 4) exitWith {_badDistance = true;};
 	if(_target getVariable["Revive",FALSE]) exitWith {};

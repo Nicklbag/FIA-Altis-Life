@@ -13,6 +13,7 @@ class Socket_Reciever
 	};
 };
 
+/*
 class SpyGlass
 {
 	tag = "SPY";
@@ -26,9 +27,10 @@ class SpyGlass
 		class observe{};
 		class payLoad{};
 		class variableCheck{};
-		class initSpy {};
+		class initSpy {preInit=1;};
 	};
 };
+*/
 
 class Life_Client_Core
 {
@@ -52,7 +54,30 @@ class Life_Client_Core
 		class adminid {};
 		class admingetID {};
 		class adminMenu {};
+		class supportMenu {};
 		class adminQuery {};
+		class adminSpectate {};
+		class adminTeleport {};
+		class adminTpHere {};
+		class supportQuery {};
+		class supportInfo {};
+	};
+	
+	class anstrich
+	{
+		file = "core\repaint";
+		class repaintMenu;
+		class repaintColor;
+		class repaintVehicle;		
+	};
+
+	class economy
+	{
+		file = "core\economy";
+		class virt_updatePrice {};
+		class addsubstract {};
+		class openEconomy {};
+		class virt_updateEconomy {};
 	};
 	
 	class Medical_System
@@ -68,19 +93,23 @@ class Life_Client_Core
 		class medicRequest {};
 		class deathScreen {};
 		class medicLoadout {};
-		class medicSirenLights {};
 		class medicLights {};
 		class medicSiren {};
+		class resetMedic {};
 	};
 	
 	class Actions
 	{
 		file = "core\actions";
 		class buyLicense {};
+		class chemlightUse {};
+		class heal {};
+		class gather {};
 		class healHospital {};
 		class pushVehicle {};
 		class repairTruck {};
 		class serviceChopper {};
+		class serviceTruck {};
 		class catchFish {};
 		class catchTurtle {};
 		class dpFinish {};
@@ -88,6 +117,8 @@ class Life_Client_Core
 		class getDPMission {};
 		class postBail {};
 		class processAction {};
+		class sellOil {};
+		class suicideBomb {};
 		class arrestAction {};
 		class escortAction {};
 		class impoundAction {};
@@ -101,11 +132,34 @@ class Life_Client_Core
 		class pickupItem {};
 		class pickupMoney {};
 		class ticketAction {};
+		class pumpRepair {};
 		class packupSpikes {};
 		class storeVehicle {};
 		class robAction {};
+		class sellTurtle {};
+		class sellGoldBars {};
 		class captureHideout {};
-		class gather {};
+		class surrender {};
+		class removeWeaponAction{};
+		class packupmauer {};
+		class processActionDual {};
+		class processActionLsd {};
+		class takeOrgans {};
+		class sitDown {};
+		class robShops {};
+		class craftAction {};
+	};
+	
+	class Special
+	{
+		file = "core\special";
+		class openEmpMenu {};
+		class isEmpOperator {};
+		class scanVehicles {};
+		class warnVehicle {};
+		class empVehicle {};
+		class vehicleWarned {};
+		class vehicleEmpd {};
 	};
 	
 	class Housing
@@ -145,13 +199,15 @@ class Life_Client_Core
 		class weaponShopCfg {};
 		class vehicleWeightCfg {};
 		class houseConfig {};
+		class craftCfg {};
 		
 		//Clothing Store Configs
 		class clothing_cop {};
 		class clothing_bruce {};
 		class clothing_reb {};
 		class clothing_dive {};
-		class clothing_kart {};
+		class clothing_medic {};
+		class clothing_soldner {};
 	};
 
 	class Player_Menu
@@ -175,6 +231,14 @@ class Life_Client_Core
 		class updateViewDistance {};
 		class settingsMenu {};
 		class settingsInit {};
+		class wantedadd2 {};
+		class wanted2 {};
+		class smartphone {};
+		class newMsg {};
+		class showMsg {};
+		class revokeLicense {};
+		class craft {};
+		class craft_update {};
 	};
 	
 	class Functions
@@ -199,7 +263,7 @@ class Life_Client_Core
 		class receiveMoney {};
 		class playerTags {};
 		class clearVehicleAmmo {};
-		class pullOutVeh {};
+		class pulloutVeh {};
 		class nearUnits {};
 		class actionKeyHandler {};
 		class playerCount {};
@@ -216,9 +280,16 @@ class Life_Client_Core
 		class inventoryClosed {};
 		class inventoryOpened {};
 		class isUIDActive {};
+		class callCellPhone {};
+		class UnlockCarSound {};
+		class LockCarSound {};
+		class stripDownPlayer {};
 		class saveGear {};
 		class loadGear {};
-		class stripDownPlayer {};
+		class autoSave {};
+		class emptyFuel {};
+		class fatigueReset {};
+		//class introCam {};
 	};
 	
 	class Network
@@ -248,7 +319,10 @@ class Life_Client_Core
 		class robPerson {};
 		class removeLicenses {};
 		class demoChargeTimer {};
+		class civInteractionMenu {};
+		class removeWeapons {};
 		class civLoadout {};
+		class hasOrgan {};
 	};
 	
 	class Vehicle
@@ -292,7 +366,14 @@ class Life_Client_Core
 		class doorAnimate {};
 		class fedCamDisplay {};
 		class copLoadout {};
+		class breathalyzer {};
+		class copSiren2 {};
 		class ticketPaid {};
+		class copEnter {};
+		class copOpener {};
+		class radarCam {};
+		class showArrestDialog {};
+		class arrestDialog_Arrest {};
 	};
 	
 	class Gangs
@@ -310,6 +391,7 @@ class Life_Client_Core
 		class gangInvite {};
 		class gangDisband {};
 		class gangDisbanded {};
+		class gangMarkers {};
 	};
 	
 	class Shops
@@ -334,6 +416,7 @@ class Life_Client_Core
 		class chopShopMenu {};
 		class chopShopSelection {};
 		class chopShopSell {};
+		class licenses {};
 	};
 	
 	class Items
@@ -348,6 +431,14 @@ class Life_Client_Core
 		class blastingCharge {};
 		class defuseKit {};
 		class storageBox {};
+		class mauer {};
+		class drinkbeer {};
+		class drinkmoonshine {};
+		class drinkwhiskey {};
+		class useHeroin {};
+		class useKokain {};
+		class useMarihuana {};
+		class weedSmoke {};
 	};
 	
 	class Dialog_Controls

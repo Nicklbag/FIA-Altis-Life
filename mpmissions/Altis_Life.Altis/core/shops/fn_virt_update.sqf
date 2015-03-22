@@ -21,6 +21,11 @@ lbClear _gear_list;
 _shop_data = [life_shop_type] call life_fnc_virt_shops;
 ctrlSetText[2403,format["%1", _shop_data select 0]];
 
+_sender = player;
+_uid = getPlayerUID _sender;
+
+[[0,_sender,life_shop_type],"TON_fnc_getprices",false,false] spawn life_fnc_MP;
+/*
 {
 	_name = [([_x,0] call life_fnc_varHandle)] call life_fnc_vartostr;
 	_index = [_x,__GETC__(buy_array)] call TON_fnc_index;
@@ -44,3 +49,4 @@ ctrlSetText[2403,format["%1", _shop_data select 0]];
 		_gear_list lbSetData [(lbSize _gear_list)-1,_x];
 	};
 } foreach (_shop_data select 1);
+*/

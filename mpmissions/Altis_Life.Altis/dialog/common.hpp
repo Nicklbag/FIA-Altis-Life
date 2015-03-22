@@ -75,6 +75,9 @@ class Life_RscListNBox
 	colorText[] = {1,1,1,1.0};
 	colorDisabled[] = {1,1,1,0.25};
 	colorScrollbar[] = {0.95,0.95,0.95,1};
+	colorPicture[] = {1,1,1,1};
+	colorPictureSelected[] = {1,1,1,1};
+	colorPictureDisabled[] = {1,1,1,1}; 
 	colorSelect[] = {0,0,0,1};
 	colorSelect2[] = {0,0,0,1};
 	colorSelectBackground[] = {0.8,0.8,0.8,1};
@@ -87,10 +90,13 @@ class Life_RscListNBox
 	autoScrollSpeed = -1;
 	autoScrollDelay = 5;
 	autoScrollRewind = 0;
+	rowHeight = 0.04;
+	drawSideArrows = 0;
+	idcLeft = -1;
+	idcRight = -1;
 	class ListScrollBar: Life_RscScrollBar{};
 	class ScrollBar: Life_RscScrollBar{};
 };
-
 
 class Life_RscText {
 	x = 0;
@@ -497,6 +503,9 @@ class Life_RscListBox
 	colorSelectBackground[] = {0.95, 0.95, 0.95, 0.5};
 	colorSelectBackground2[] = {1, 1, 1, 0.5};
 	colorScrollbar[] = {0.2, 0.2, 0.2, 1};
+	colorPicture[] = {1,1,1,1};
+	colorPictureSelected[] = {1,1,1,1};
+	colorPictureDisabled[] = {1,1,1,1};
 	arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
 	arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
 	wholeHeight = 0.45;

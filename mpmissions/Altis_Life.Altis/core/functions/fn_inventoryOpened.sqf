@@ -11,6 +11,7 @@ _container = _this select 1;
 
 _isPack = getNumber(configFile >> "CfgVehicles" >> (typeOf _container) >> "isBackpack");
 if(_isPack == 1) then {
+	if(playerSide == west) exitWith {};
 	hint localize "STR_MISC_Backpack";
 	[] spawn {
 		waitUntil {!isNull (findDisplay 602)};

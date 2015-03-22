@@ -26,12 +26,13 @@ if(isNull _cop) exitWith {};
 			player setVariable["transporting",false,true];
 			detach player;
 			titleText[localize "STR_Cop_ExcessiveRestrain","PLAIN"];
+			player say3D "cuff";
 		};
 	};
 };
 
 titleText[format[localize "STR_Cop_Retrained",_cop getVariable["realname",name _cop]],"PLAIN"];
-				
+player say3D "cuff";
 while {player getVariable "restrained"} do
 {
 	if(vehicle player == player) then {

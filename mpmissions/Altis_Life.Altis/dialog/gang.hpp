@@ -108,7 +108,7 @@ class Life_My_Gang_Diag {
 		class InviteMember : GangLeader
 		{
 			idc = 2630;
-			text = "$STR_Gang_Invite_Player";
+			text = "Einladen";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] spawn life_fnc_gangInvitePlayer";
 			y = .51;
@@ -117,7 +117,7 @@ class Life_My_Gang_Diag {
 		class DisbandGang : InviteMember
 		{
 			idc = 2631;
-			text = "$STR_Gang_Disband_Gang";
+			text = "Löschen";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[] spawn life_fnc_gangDisband";
 			y = .46;
@@ -174,7 +174,7 @@ class Life_Create_Gang_Diag {
 			text = "";
 			x = 0.1;
 			y = 0.25;
-			w = 0.5; h = .11;
+			w = 0.5; h = 0.11;
 		};
 		
 		class Title : Life_RscTitle {

@@ -11,10 +11,11 @@ createDialog "Life_Clothing";
 disableSerialization;
 
 //Cop / Civ Pre Check
-if((_this select 3) in ["bruce","dive","reb","kart"] && playerSide != civilian) exitWith {hint localize "STR_Shop_NotaCiv"; closeDialog 0;};
-if((_this select 3) == "reb" && !license_civ_rebel) exitWith {hint localize "STR_Shop_NotaReb"; closeDialog 0;};
-if((_this select 3) in ["cop"] && playerSide != west) exitWith {hint localize "STR_Shop_NotaCop"; closeDialog 0;};
-if((_this select 3) in ["dive"] && !license_civ_dive) exitWith { hint localize "STR_Shop_NotaDive"; closeDialog 0;};
+if((_this select 3) in ["bruce","dive","reb","soldner"] && playerSide != civilian) exitWith {hint "You need to be a civilian to use this store!"; closeDialog 0;};
+if((_this select 3) == "reb" && !license_civ_rebel) exitWith {hint "You don't have rebel training yet!"; closeDialog 0;};
+if((_this select 3) in ["cop"] && playerSide != west) exitWith {hint "You need to be a cop to use this store!"; closeDialog 0;};
+if((_this select 3) in ["medic"] && !license_med_air && playerSide != independent) exitWith {hint "Du benötigst eine MedicLizenz und musst Sanitäter sein!"; closeDialog 0;};
+if((_this select 3) in ["dive"] && !license_civ_dive) exitWith { hint "You need a Diving license to use this shop!"; closeDialog 0;};
 
 life_clothing_store = _this select 3;
 
@@ -22,7 +23,7 @@ life_clothing_store = _this select 3;
 _var = [life_clothing_store,0] call life_fnc_licenseType;
 if(_var select 0 != "") then
 {
-	if(!(missionNamespace getVariable (_var select 0))) exitWith {hint format[localize "STR_Shop_YouNeed",[_var select 0] call life_fnc_varToStr]; closeDialog 0;};
+	if(!(missionNamespace getVariable (_var select 0))) exitWith {hint format["You need a %1 to buy from this shop!",[_var select 0] call life_fnc_varToStr]; closeDialog 0;};
 };
 
 //initialize camera view
@@ -42,11 +43,11 @@ _filter = (findDisplay 3100) displayCtrl 3105;
 lbClear _filter;
 lbClear _list;
 
-_filter lbAdd localize "STR_Shop_UI_Clothing";
-_filter lbAdd localize "STR_Shop_UI_Hats";
-_filter lbAdd localize "STR_Shop_UI_Glasses";
-_filter lbAdd localize "STR_Shop_UI_Vests";
-_filter lbAdd localize "STR_Shop_UI_Backpack";
+_filter lbAdd "Kleidung";
+_filter lbAdd "Hüte";
+_filter lbAdd "Brillen";
+_filter lbAdd "Westen";
+_filter lbAdd "Rucksäcke";
 
 _filter lbSetCurSel 0;
 
@@ -165,5 +166,4 @@ if((life_clothing_purchase select 4) == -1) then
 };
 
 life_clothing_purchase = [-1,-1,-1,-1,-1];
-
 [] call life_fnc_saveGear;

@@ -14,10 +14,13 @@ if(isNull _unit OR _item == "") exitWith {}; //Bad thingies?
 
 switch(playerSide) do
 {
-	case west: {}; //Blah
+	case west: {};
 	case civilian: {
 		//Currently stoping the civilians from taking the indep clothing from medics.
-		if(_item in ["U_I_CombatUniform"]) then {
+		if(_item in ["U_B_HeliPilotCoveralls"]) then {
+			[_item,false,false,false,false] call life_fnc_handleItem;
+		};
+		if(_item in ["U_O_OfficerUniform_ocamo"]) then {
 			[_item,false,false,false,false] call life_fnc_handleItem;
 		};
 	};

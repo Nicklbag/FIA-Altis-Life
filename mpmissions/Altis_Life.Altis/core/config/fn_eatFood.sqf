@@ -23,9 +23,9 @@ if([false,_food,1] call life_fnc_handleInv) then {
 		case "catshark": {_val = 100};
 		case "turtle": {_val = 100};
 		case "turtlesoup": {_val = 100};
-		case "donuts": {_val = 30};
-		case "tbacon": {_val = 40};
-		case "peach": {_val = 10};
+		case "donuts": {_val = 100};
+		case "tbacon": {_val = 50};
+		case "peach": {_val = 20};
 	};
 
 	_sum = life_hunger + _val;

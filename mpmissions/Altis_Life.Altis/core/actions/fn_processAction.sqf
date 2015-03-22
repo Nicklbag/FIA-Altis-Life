@@ -14,17 +14,29 @@ if(isNull _vendor OR _type == "" OR (player distance _vendor > 10)) exitWith {};
 //unprocessed item,processed item, cost if no license,Text to display (I.e Processing  (percent) ..."
 _itemInfo = switch (_type) do
 {
-	case "oil": {["oilu","oilp",1200,(localize "STR_Process_Oil")];};
-	case "diamond": {["diamond","diamondc",1350,(localize "STR_Process_Diamond")];};
-	case "heroin": {["heroinu","heroinp",1750,(localize "STR_Process_Heroin")];};
-	case "copper": {["copperore","copper_r",750,(localize "STR_Process_Copper")];};
-	case "iron": {["ironore","iron_r",1120,(localize "STR_Process_Iron")];};
-	case "sand": {["sand","glass",650,(localize "STR_Process_Sand")];};
-	case "salt": {["salt","salt_r",450,(localize "STR_Process_Salt")];};
-	case "cocaine": {["cocaine","cocainep",1500,(localize "STR_Process_Cocaine")];};
-	case "marijuana": {["cannabis","marijuana",500,(localize "STR_Process_Marijuana")];};
-	case "cement": {["rock","cement",350,(localize "STR_Process_Cement")];};
-	default {[];};
+	case "oil": {["oilu","oilp",1200,"Processing Oil"];};
+	case "diamond": {["diamond","diamondc",1350,"Processing Diamond"]};
+	case "heroin": {["heroinu","heroinp",2100,"Processing Heroin"]};
+	case "copper": {["copperore","copper_r",750,"Processing Copper"]};
+	case "iron": {["ironore","iron_r",1120,"Processing Iron"]};
+	case "sand": {["sand","glass",650,"Processing Sand"]};
+	case "salt": {["salt","salt_r",450,"Processing Salt"]};
+	case "cocaine": {["cocaine","cocainep",1500,"Processing Cocaine"]};
+	case "marijuana": {["cannabis","marijuana",500,"Processing Marijuana"]};
+	case "heroin": {["heroinu","heroinp",1720,"Processing Heroin"]};
+	case "cement": {["rock","cement",350,"Mixing Cement"]};
+	case "grapes": {["grapes","wine",250,"Processing Grapes into Wine"]};
+	case "moonshine": {["yeast","moonshine",250,"Moonshining",true,"mash"]};//new
+	case "meth": {["methu","methp",5000,"Cooking Meth"]};
+	case "bottledshine": {["moonshine","bottledshine",500,"Bootle Moonshine",true,"bottles"]};//new
+	case "whiskey": {["yeast","whiskey",1000,"Fermenting Whiskey",true,"rye"]};//new
+	case "beer": {["yeast","beerp",1500,"Brewing Beer",true,"hops"]};//new
+	case "bottledbeer": {["beerp","bottledbeer",500,"Bottle Beer",true,"bottles"]};//new
+	case "bottledwhiskey": {["whiskey","bottledwhiskey",500,"Bottle Whiskey",true,"bottles"]};//new
+	case "mash": {["water","mash",100,"Mixing Grain Mash",true,"cornmeal"]};//new
+    case "uranium1": {["uranium1","uranium2",5000,"Reinigung des Urans"]}; // Add this
+    case "uranium4": {["uranium4","uranium",15000,"Uran wird getrocknet"]}; // Add this
+	default {[]};
 };
 
 //Error checking
@@ -70,19 +82,20 @@ if(_hasLicense) then
 		_progress progressSetPosition _cP;
 		_pgText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_upp];
 		if(_cP >= 1) exitWith {};
-		if(player distance _vendor > 10) exitWith {};
+		if(player distance _vendor > 10) exitWith {_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
 	};
 	
-	if(player distance _vendor > 10) exitWith {hint localize "STR_Process_Stay"; 5 cutText ["","PLAIN"]; life_is_processing = false;};
-	if(!([false,_oldItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; life_is_processing = false;};
-	if(!([true,_newItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; [true,_oldItem,_oldVal] call life_fnc_handleInv; life_is_processing = false;};
+	if(player distance _vendor > 10) exitWith {hint "You need to stay within 10m to process."; 5 cutText ["","PLAIN"]; life_is_processing = false;_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
+	if(!([false,_oldItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; life_is_processing = false;_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
+	if(!([true,_newItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; [true,_oldItem,_oldVal] call life_fnc_handleInv; life_is_processing = false;_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
 	5 cutText ["","PLAIN"];
-	titleText[format[localize "STR_Process_Processed",_oldVal,_itemName],"PLAIN"];
+	titleText[format["You have processed %1 into %2",_oldVal,_itemName],"PLAIN"];
 	life_is_processing = false;
+	_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];
 }
 	else
 {
-	if(life_cash < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
+	if(life_cash < _cost) exitWith {hint format["You need $%1 to process without a license!",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
 	
 	while{true} do
 	{
@@ -94,12 +107,13 @@ if(_hasLicense) then
 		if(player distance _vendor > 10) exitWith {};
 	};
 	
-	if(player distance _vendor > 10) exitWith {hint localize "STR_Process_Stay"; 5 cutText ["","PLAIN"]; life_is_processing = false;};
-	if(life_cash < _cost) exitWith {hint format[localize "STR_Process_License",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
-	if(!([false,_oldItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; life_is_processing = false;};
-	if(!([true,_newItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; [true,_oldItem,_oldVal] call life_fnc_handleInv; life_is_processing = false;};
+	if(player distance _vendor > 10) exitWith {hint "You need to stay within 10m to process."; 5 cutText ["","PLAIN"]; life_is_processing = false;_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
+	if(life_cash < _cost) exitWith {hint format["You need $%1 to process  without a license!",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
+	if(!([false,_oldItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; life_is_processing = false;_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
+	if(!([true,_newItem,_oldVal] call life_fnc_handleInv)) exitWith {5 cutText ["","PLAIN"]; [true,_oldItem,_oldVal] call life_fnc_handleInv; life_is_processing = false;_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];};
 	5 cutText ["","PLAIN"];
-	titleText[format[localize "STR_Process_Processed2",_oldVal,_itemName,[_cost] call life_fnc_numberText],"PLAIN"];
+	titleText[format["You have processed %1 into %2 for $%3",_oldVal,_itemName,[_cost] call life_fnc_numberText],"PLAIN"];
 	life_cash = life_cash - _cost;
 	life_is_processing = false;
+	_ui = "osefStatusBar" call BIS_fnc_rscLayer;_ui cutRsc["osefStatusBar","PLAIN"];
 };	

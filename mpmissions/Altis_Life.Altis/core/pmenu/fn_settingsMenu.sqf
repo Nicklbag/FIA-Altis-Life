@@ -17,7 +17,7 @@ ctrlSetText[2912, format["%1", tawvd_car]];
 ctrlSetText[2922, format["%1", tawvd_air]];
 
 //Setup Sliders range
-{ slidersetRange [_x,100,12000];} foreach [2901,2911,2921];
+{ slidersetRange [_x,200,5000];} foreach [2901,2911,2921];
 //Setup Sliders speed
 { ((findDisplay 2900) displayCtrl _x) sliderSetSpeed [100,100,100]; } foreach [2901,2911,2921];
 //Setup Sliders position

@@ -8,15 +8,15 @@
 private["_vehicle","_displayName","_upp","_ui","_progress","_pgText","_cP","_previousState"];
 _vehicle = cursorTarget;
 life_interrupted = false;
-if(isNull _vehicle) exitWith {hint localize "STR_ISTR_Jerry_NotLooking"};
+if(isNull _vehicle) exitWith {hint "You need to look at the vehicle you want to refuel!"};
 if(!(_vehicle isKindOF "LandVehicle") && !(_vehicle isKindOf "Air") && !(_vehicle isKindOf "Ship")) exitWith {};
-if(player distance _vehicle > 7.5) exitWith {hint localize "STR_ISTR_Jerry_NotNear"};
+if(player distance _vehicle > 7.5) exitWith {hint "You need to be closer to the vehicle!"};
 
 if(!([false,"fuelF",1] call life_fnc_handleInv)) exitWith {};
 life_action_inUse = true;
 _displayName = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName");
 
-_upp = format[localize "STR_ISTR_Jerry_Process",_displayName];
+_upp = format["Refuelling %1",_displayName];
 //Setup our progress bar.
 disableSerialization;
 5 cutRsc ["life_progress","PLAIN"];
@@ -51,7 +51,7 @@ life_action_inUse = false;
 5 cutText ["","PLAIN"];
 player playActionNow "stop";
 if(!alive player) exitWith {};
-if(life_interrupted) exitWith {life_interrupted = false; titleText[localize "STR_NOTF_ActionCancel","PLAIN"];};
+if(life_interrupted) exitWith {life_interrupted = false; titleText["Action cancelled","PLAIN"];};
 
 
 switch (true) do
@@ -60,7 +60,7 @@ switch (true) do
 	{
 		if(!local _vehicle) then
 		{
-			[[_vehicle,(Fuel _vehicle) + 0.5],"life_fnc_setFuel",_vehicle,false] spawn life_fnc_MP;
+			[[_vehicle,(fuel _vehicle)+0.5],"life_fnc_setFuel",_vehicle,false] spawn life_fnc_MP;
 		}
 			else
 		{
@@ -72,7 +72,7 @@ switch (true) do
 	{
 		if(!local _vehicle) then
 		{
-			[[_vehicle,(Fuel _vehicle) + 0.2],"life_fnc_setFuel",_vehicle,false] spawn life_fnc_MP;
+			[[_vehicle,(fuel _vehicle)+0.2],"life_fnc_setFuel",_vehicle,false] spawn life_fnc_MP;
 		}
 			else
 		{
@@ -84,7 +84,7 @@ switch (true) do
 	{
 		if(!local _vehicle) then
 		{
-			[[_vehicle,(Fuel _vehicle) + 0.35],"life_fnc_setFuel",_vehicle,false] spawn life_fnc_MP;
+			[[_vehicle,(fuel _vehicle)+0.35],"life_fnc_setFuel",_vehicle,false] spawn life_fnc_MP;
 		}
 			else
 		{
@@ -92,5 +92,5 @@ switch (true) do
 		};
 	};
 };
-titleText[format[localize "STR_ISTR_Jerry_Success",_displayName],"PLAIN"];
+titleText[format["You have refuelled that %1",_displayName],"PLAIN"];
 [true,"fuelE",1] call life_fnc_handleInv;

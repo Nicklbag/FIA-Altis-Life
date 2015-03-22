@@ -355,7 +355,7 @@
 		<Key ID="STR_CELL_AdminMSGAll">
 			<Original>Admin Msg All</Original>
 			<English>Admin Msg All</English>
-			<German>Admin-Nachricht an alle</German>
+			<German>Admin:Alle</German>
 			<French>Admin Msg ALL</French>
 			<Italian>Admin Msg</Italian>			
 			<Portuguese>Admin Msg ALL</Portuguese>
@@ -363,10 +363,18 @@
 		<Key ID="STR_CELL_EMSRequest">
 			<Original>Request EMS</Original>
 			<English>Request EMS</English>
-			<German>An die Sanitäter</German>
+			<German>Sanitäter</German>
 			<French>Requête Medecin</French>
 			<Italian>Msg medici</Italian>
 			<Portuguese>Chamar SAMU</Portuguese>
+		</Key>
+		<Key ID="STR_CELL_ADACRequest">
+			<Original>ADAC</Original>
+			<English>Request ADAC</English>
+			<German>ADAC</German>
+			<French>Requête ADAC</French>
+			<Italian>Msg ADAC</Italian>
+			<Portuguese>Chamar ADAC</Portuguese>
 		</Key>
 	</Package>
 	<Package name="Chop_Shop">
@@ -997,7 +1005,7 @@
 		<Key ID="STR_Keys_DropKey">
 			<Original>Drop Key</Original>
 			<English>Drop Key</English>
-			<German>Schlüssel wegwerfen</German>
+			<German>Wegwerfen</German>
 			<French>Jeter Clef</French>
 			<Italian>Abbandona Chiave</Italian>
 			<Portuguese>Remover Chave</Portuguese>
@@ -1055,10 +1063,18 @@
 		<Key ID="STR_PM_WantedList">
 			<Original>Wanted List</Original>
 			<English>Wanted List</English>
-			<German>Fahndungsliste</German>
+			<German>Fahndung</German>
 			<French>Interpol</French>
 			<Italian>Lista Ricercati</Italian>
 			<Portuguese>Lista de Foragidos</Portuguese>
+		</Key>
+		<Key ID="STR_PM_Craft">
+			<Original>Craft</Original>
+			<English>Craft</English>
+			<German>Bauen</German>
+			<French>Craft</French>
+			<Italian>Craft</Italian>
+			<Portuguese>Craft</Portuguese>
 		</Key>
 		<Key ID="STR_PM_CellPhone">
 			<Original>Cell Phone</Original>
@@ -1071,7 +1087,7 @@
 		<Key ID="STR_PM_KeyChain">
 			<Original>Key Chain</Original>
 			<English>Key Chain</English>
-			<German>Schlüsselbund</German>
+			<German>Schlüssel</German>
 			<French>Porte-clés</French>
 			<Italian>Portachiavi</Italian>
 			<Portuguese>Chaves</Portuguese>
@@ -1097,7 +1113,7 @@
 		<Key ID="STR_SM_Title">
 			<Original>Settings Menu</Original>
 			<English>Settings Menu</English>
-			<German>Einstellungen</German>
+			<German>Einstellung</German>
 			<French>Menu Paramètres</French>
 			<Italian>Menu Impostazioni</Italian>
 			<Portuguese>Menu de Configuração</Portuguese>
@@ -1271,7 +1287,7 @@
 		<Key ID="STR_Ticket_GiveTicket">
 			<Original>Give Ticket</Original>
 			<English>Give Ticket</English>
-			<German>Ticket geben</German>
+			<German>Geben</German>
 			<French>Verbaliser</French>
 			<Italian>Dai Multa</Italian>
 			<Portuguese>Dar Multa</Portuguese>
@@ -1279,7 +1295,7 @@
 		<Key ID="STR_Ticket_PayTicket">
 			<Original>Pay Ticket</Original>
 			<English>Pay Ticket</English>
-			<German>Ticket bezahlen</German>
+			<German>Bezahlen</German>
 			<French>Payer l'amende</French>
 			<Italian>Paga Multa</Italian>
 			<Portuguese>Pagar Multa</Portuguese>
@@ -1287,7 +1303,7 @@
 		<Key ID="STR_Ticket_RefuseTicket">
 			<Original>Refuse Ticket</Original>
 			<English>Refuse Ticket</English>
-			<German>Ticket ablehnen</German>
+			<German>Ablehnen</German>
 			<French>Contester l'amende</French>
 			<Italian>Rifiuta Multa</Italian>
 			<Portuguese>Recusar Multa</Portuguese>
@@ -4371,6 +4387,14 @@
 			<Italian>Parcheggia Veicolo</Italian>
 			<Portuguese>Guardar Veículo</Portuguese>
 		</Key>
+		<Key ID="STR_pInAct_RemoveWeapons">
+			<Original>Waffen nehmen</Original>
+			<German>Waffen nehmen</German>
+		</Key>
+		<Key ID="STR_pInAct_Breathalyzer">
+			<Original>Alkohol Test</Original>
+			<German>Alkohol Test</German>
+		</Key>
 		<Key ID="STR_pInAct_SellHouse">
 			<Original>Sell House</Original>
 			<English>Sell House</English>
@@ -4456,7 +4480,7 @@
 		<Key ID="STR_vInAct_Repair">
 			<Original>Repair Vehicle</Original>
 			<English>Repair Vehicle</English>
-			<German>Fahrzeug reparieren</German>
+			<German>Reparieren</German>
 			<French>Réparer Véhicule</French>
 			<Italian>Ripara Veicolo</Italian>
 			<Portuguese>Concertar Veículo</Portuguese>
@@ -4472,7 +4496,7 @@
 		<Key ID="STR_vInAct_SearchVehicle">
 			<Original>Search Vehicle</Original>
 			<English>Search Vehicle</English>
-			<German>Fahrzeug durchsuchen</German>
+			<German>Durchsuchen</German>
 			<French>Fouiller Véhicule</French>
 			<Italian>Cerca Veicolo</Italian>
 			<Portuguese>Vasculhar Veículo</Portuguese>
@@ -4488,7 +4512,7 @@
 		<Key ID="STR_vInAct_Impound">
 			<Original>Impound Vehicle</Original>
 			<English>Impound Vehicle</English>
-			<German>Fahrzeug beschlagnahmen</German>
+			<German>Beschlagnahmen</German>
 			<French>Mise en fourrière</French>
 			<Italian>Sequestra Veicolo</Italian>
 			<Portuguese>Apreender Veículo</Portuguese>
@@ -5061,5 +5085,146 @@
 			<Italian>Rob Person</Italian>		
 			<Portuguese>Roubar Jogador</Portuguese>
 		</Key>
+	</Package>
+		<Package name="Support_Menu">
+		<Key ID="STR_PM_SupportMenu">
+			<Original>Supporter Menü</Original>
+		</Key>
+	</Package>
+	<Package name="Admin_Menu">
+		<Key ID="STR_Admin_Title">
+			<Original>Admin Menü</Original>
+		</Key>
+		<Key ID="STR_Admin_GetID">
+			<Original>Gebe ID</Original>
+		</Key>
+		<Key ID="STR_Admin_Spectate">
+			<Original>Zuschauen</Original>
+		</Key>
+		<Key ID="STR_Admin_Teleport">
+			<Original>Teleport</Original>
+		</Key>
+		<Key ID="STR_Admin_TpHere">
+			<Original>TP Here</Original>
+		</Key>
+	</Package>
+		<Package name="Smartphone">
+		<Key ID="STR_PM_Smartphone">
+			<Original>Telefon</Original>
+		</Key>
+		<Key ID="STR_SMARTPHONE_TITLE">
+			<Original>Telefon SMS</Original>
+		</Key>
+		<Key ID="STR_SMARTPHONE_PLAYERLISTTITLE">
+			<Original>Spielerliste</Original>
+		</Key>
+		<Key ID="STR_SMARTPHONE_MESSAGETITLE">
+			<Original>Nachrichten  | VON | WANN</Original>
+		</Key>
+		<Key ID="STR_SMARTPHONE_RANDOMTITLE">
+			<Original>Nachricht zum lesen auswählen</Original>
+		</Key>
+		<Key ID="STR_Global_Close">
+			<Original>Zurück</Original>
+		</Key>
+		<Key ID="STR_SMARTPHONE_SCHREIBEN">
+			<Original>Schreiben</Original>
+		</Key>
+		<Key ID="STR_SMARTPHONE_NOTRUF">
+			<Original>Notruf</Original>
+		</Key>
+		<Key ID="STR_SMARTPHONE_Absenden">
+			<Original>Absenden</Original>
+		</Key>
+		<Key ID="STR_SMARTPHONE_NACHRICHTTITLE">
+			<Original>Nachricht an:</Original>
+		</Key>
+		<Key ID="STR_SMARTPHONE_Notruftitle">
+			<Original>Kostenloser Notruf Dienst</Original>
+		</Key>
+		<Key ID="STR_pInAct_RevokeLicense">
+			<Orignal>Revoke Licenses</Orignal>
+		</Key>
+		<Key ID="STR_Civ_RevokeLicense_Driver">
+			<Original>Your Drivers License has been REVOKED by the Police!</Original>
+		</Key>
+		<Key ID="STR_Civ_RevokeLicense_Truck">
+			<Original>Your Truck License has been REVOKED by the Police!</Original>
+		</Key>
+		<Key ID="STR_Civ_RevokeLicense_Pilot">
+			<Original>Your Pilot License has been REVOKED by the Police!</Original>
+		</Key>
+		<Key ID="STR_Civ_RevokeLicense_Boating">
+			<Original>Your Boating License has been REVOKED by the Police!</Original>
+		</Key>
+		<Key ID="STR_Civ_RevokeLicense_Diving">
+			<Original>Your Diving License has been REVOKED by the Police!</Original>
+		</Key>
+		<Key ID="STR_Civ_RevokeLicense_Taxi">
+			<Original>Your Taxi License has been REVOKED by the Police!</Original>
+		</Key>
+		<Key ID="STR_Civ_RevokeLicense_AllMotor">
+			<Original>Your Motor Vehicle Licenses have been REVOKED by the Police!</Original>
+		</Key>
+		<Key ID="STR_Civ_RevokeLicense_Firearm">
+			<Original>Your Firearms License has been REVOKED by the Police!</Original>
+		</Key>
+		</Package>
+		<Key ID="STR_Civ_LicenseRemove_1a">
+			<Original>Durch Deine wiederholte Überschreitung der Geschwindigkeit, wurde Dir dein Führerschein entzogen.</Original>
+		</Key> 
+		<key ID="STR_pInAct_rob">
+			<Original>Ausrauben</Original>
+			<German>Ausrauben</German>
+		</Key>
+		<Package name="Craft">
+	<Key ID="STR_CRAFT_Title">
+		<Original>Crafting Menu</Original>
+		<English>Crafting Menu</English>
+		<German>Bauen</German>
+		<French>Menu de Crafting</French>
+		<Italian>Crafting Menu</Italian>
+		<Portuguese>Crafting Menu</Portuguese>
+	</Key>
+	<Key ID="STR_PM_CraftStats">
+		<Original>Object to craft</Original>
+ 		<English>Object to craft</English>
+ 		<German>Objekt nach herstellung</German>
+		<French>Objet à crafter</French>
+		<Italian>Object to craft</Italian>
+		<Portuguese>Object to craft</Portuguese>
+	</Key>
+	<Key ID="STR_PM_CraftMaterials">
+		<Original>Materials needed</Original>
+ 		<English>Materials needed</English>
+ 		<German>Benötigte Gegenstände</German>
+		<French>Materiaux requis</French>
+		<Italian>Materials needed</Italian>
+		<Portuguese>Materials needed</Portuguese>
+	</Key>
+	<Key ID="STR_CRAFT_Button">
+		<Original>Craft !</Original>
+ 		<English>Craft !</English>
+ 		<German>Herstellen</German>
+		<French>Craft !</French>
+		<Italian>Craft !</Italian>
+		<Portuguese>Craft !</Portuguese>
+	</Key>
+	<Key ID="STR_PM_NoMaterial">
+		<Original>You do not have all the required materials !</Original>
+ 		<English>You do not have all the required materials !</English>
+ 		<German>Du hast nicht alle benötigten Materialien !</German>
+		<French>Vous n'avez pas tous les matériaux requis !</French>
+		<Italian>You do not have all the required materials !</Italian>
+		<Portuguese>You do not have all the required materials !</Portuguese>
+	</Key>
+	<Key ID="STR_CRAFT_Process">
+		<Original>You have crafted : %1</Original>
+		<English>You have crafted : %1</English>
+		<German>Du hast folgenden Gegenstand hergestellt : %1</German>
+		<French>Vous avez crafté : %1</French>
+		<Italian>You have crafted : %1</Italian>
+		<Portuguese>You have crafted : %1</Portuguese>
+	</Key>
 	</Package>
 </Project>
