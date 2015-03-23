@@ -18,7 +18,6 @@ life_versionInfo = "Altis Life RPG";
 [] execVM "script\teargas.sqf"; //Load Teargas Script for Cops
 [] execVM "script\savezone.sqf"; //Load the Savezones
 [] execVM "script\fn_statusBar.sqf"; //Load the Statusbar
-[] execVM "CLAY_CarRadio\initCarRadio.sqf"; //Autoradio
 enableEnvironment true;
 setTerrainGrid 45;
 StartProgress = true;
