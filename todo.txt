@@ -1,7 +1,15 @@
 To Do List:
 
-- Radio Rausnehmen ?
+- Radio musik einfügen description.ext fixen !!!!!
 - Tempomat Testen
 - DJ NPC Einbauen
 - Heli Taxi
 - Cop Sirenen
+- Hunting Script einbauen
+- Schutzsirene
+- Paintball arena ?
+- Tankverbrauch
+- Slot Maschine (Spielautomat)
+- Black Jack
+- Heirat Script
+- Handy ausschalten wenn gefesselt
