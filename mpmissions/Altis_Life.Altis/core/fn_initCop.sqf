@@ -21,6 +21,30 @@ if(!(str(player) in ["cop_1111"])) then {
 		["NotWhitelisted",false,true] call BIS_fnc_endMission;
 		sleep 35;
 	};
+	
+// Paycheck for each Rang 
+// Author KRinK
+// All Rights by KRinK
+// Set donor pay check increase
+switch (__GETC__(life_donator)) do 
+			{
+				case 1: { _donatorlevel = 500; }; //Level 1
+				case 2: { _donatorlevel = 1000; }; //Level 2
+				case 3: { _donatorlevel = 1500; }; //Level 3
+				default { _donatorlevel = 0; }; //default for non donators they get nada!
+			};
+
+// Set Paycheck for Police
+switch (__GETC__(life_coplevel)) do 
+			{
+				case 1: { life_paycheck = ((2000) + (_donatorlevel)); }; //Cadet
+				case 2: { life_paycheck = ((3000) + (_donatorlevel)); }; //Officer
+				case 3: { life_paycheck = ((4000) + (_donatorlevel)); }; //Cpl
+				case 4: { life_paycheck = ((5000) + (_donatorlevel)); }; //Sgt
+				case 5: { life_paycheck = ((6000) + (_donatorlevel)); }; //Lt
+				case 6: { life_paycheck = ((6500) + (_donatorlevel)); }; //Captain
+				default { life_paycheck = ((2000) + (_donatorlevel)); }; //default in-case anything goes tits up
+			};
 };
 
 
@@ -32,7 +56,7 @@ waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done
 //Introcam
 [] spawn life_fnc_IntroCam;
 
-//Skins und Backpacks für Cops
+//Skins und Backpacks fÃ¼r Cops
 // CopLevel 1
 [] spawn
 {
