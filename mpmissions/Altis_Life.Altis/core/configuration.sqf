@@ -56,7 +56,7 @@ __CONST__(life_revive_fee,1000); //Fee for players to pay when revived.
 __CONST__(life_houseLimit,3); //Maximum amount of houses a player can buy (TODO: Make Tiered licenses).
 
 //Gang related stuff?
-__CONST__(life_gangPrice,40000); //Price for creating a gang (They're all persistent so keep it high to avoid 345345345 gangs).
+__CONST__(life_gangPrice,70000); //Price for creating a gang (They're all persistent so keep it high to avoid 345345345 gangs).
 __CONST__(life_gangUpgradeBase,10000); //MASDASDASD
 __CONST__(life_gangUpgradeMultipler,2.5); //BLAH
 
@@ -89,10 +89,10 @@ life_action_in_use = false;
 life_thirst = 100;
 life_hunger = 100;
 life_battery = 50;
-__CONST__(life_paycheck_period,10); //Five minutes
+__CONST__(life_paycheck_period,5); //Five minutes
 life_cash = 0;
 __CONST__(life_impound_car,2500);
-__CONST__(life_impound_boat,1000);
+__CONST__(life_impound_boat,5000);
 __CONST__(life_impound_air,7500);
 life_istazed = false;
 life_my_gang = ObjNull;
@@ -108,18 +108,18 @@ switch (playerSide) do
 {
 	case west: 
 	{
-		life_atmcash = 10000; //Starting Bank Money
-		life_paycheck = 2000; //Paycheck Amount
+		life_atmcash = 50000; //Starting Bank Money
+		life_paycheck = 4000; //Paycheck Amount
 	};
 	case civilian: 
 	{
-		life_atmcash = 10000; //Starting Bank Money
-		life_paycheck = 850; //Paycheck Amount
+		life_atmcash = 50000; //Starting Bank Money
+		life_paycheck = 900; //Paycheck Amount
 	};
 	
 	case independent: {
-		life_atmcash = 10000;
-		life_paycheck = 1750;
+		life_atmcash = 50000;
+		life_paycheck = 2000;
 	};
 };
 
