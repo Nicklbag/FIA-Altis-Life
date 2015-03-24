@@ -12,6 +12,27 @@ _item = lbData[2005,(lbCurSel 2005)];
 
 switch (true) do
 {
+	case (_item == "ehering"):
+	{
+		if( life_married != "-2" ) then 
+		{
+			if(([false,_item,1] call life_fnc_handleInv)) then
+			{
+				hint "Jemand moechte dich heiraten !! Du bekommst 5000$ regirung - Wir wuenschen euch viel glueck!";
+				life_cash = life_cash + 5000;
+				if(life_married == "-1") then {
+					life_married = "someone";
+				};
+				[[0,format["%1 hat %2 geheiratet Ist das nicht toll! - Wir wünschen dem paar viel Glück !",profileName, life_married]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+				life_married = "-2";
+			};
+		}
+		else
+		{
+			hint "DU KANNST NICHT ZWEI MAL HEIRATEN";
+		};
+	};
+	
 	case (_item == "water" or _item == "coffee"):
 	{
 		if(([false,_item,1] call life_fnc_handleInv)) then
@@ -222,12 +243,35 @@ switch (true) do
 			[] spawn life_fnc_weed;
 		};
 	};
+};
+	
+[] call life_fnc_p_updateMenu;
+[] call life_fnc_hudUpdate;
+/*
+	case (_item == "ehering"):
+	{
+		if( life_married != "-2" ) then 
+		{
+			if(([false,_item,1] call life_fnc_handleInv)) then
+			{
+				hint "Jemand möchte dich heiraten ist das nicht toll. Die Regirung wünscht dem jungen paar alles gute";
+				life_cash = life_cash + 5000;
+				if(life_married == "-1") then {
+					life_married = "someone";
+				};
+				[[0,format["%1 und %2! haben gerade geheiratet!!! Ist das nicht wunderbar ]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+				life_married = "-2";
+				life_cash = life_cash + 5000;
+			};
+		}
+		else
+		{
+			hint "DU KANNST NICHT ZWEIMAL HEIRATEN !!! PASS AUF DAS %2 DASS NICHT HERAUSFINDET ";
+		};
+	};
 	
 	default
 	{
 		hint "Du kannst diesen Gegenstand nicht benutzen.";
 	};
-};
-	
-[] call life_fnc_p_updateMenu;
-[] call life_fnc_hudUpdate;
+*/
