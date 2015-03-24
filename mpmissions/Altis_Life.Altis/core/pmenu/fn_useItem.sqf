@@ -18,18 +18,18 @@ switch (true) do
 		{
 			if(([false,_item,1] call life_fnc_handleInv)) then
 			{
-				hint "Jemand moechte dich heiraten !! Du bekommst 5000$ regirung - Wir wuenschen euch viel glueck!";
+				hint "Awesome! Someone wants to marry you! You get 5000$ from the government - we wish you all the best!";
 				life_cash = life_cash + 5000;
 				if(life_married == "-1") then {
 					life_married = "someone";
 				};
-				[[0,format["%1 hat %2 geheiratet Ist das nicht toll! - Wir wünschen dem paar viel Glück !",profileName, life_married]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+				[[0,format["%1 just married %2! That is great isn't it? We wish you good luck!",profileName, life_married]],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 				life_married = "-2";
 			};
 		}
 		else
 		{
-			hint "DU KANNST NICHT ZWEI MAL HEIRATEN";
+			hint "You can't marry twice! What do you think who you are?";
 		};
 	};
 	

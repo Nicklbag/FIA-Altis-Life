@@ -102,6 +102,8 @@ life_drugged_weed = -1;
 life_drugged_weed_duration = 3;
 life_fadeSound = false; 
 
+life_married = ""; //married script
+
 life_vehicles = [];
 bank_robber = [];
 switch (playerSide) do
@@ -208,7 +210,8 @@ life_inv_items =
 	"life_inv_uranium4",
 	"life_inv_uranium",
 	"life_inv_kidney",
-	"life_inv_scalpel"
+	"life_inv_scalpel",
+	"life_inv_ehering"
 ];
 
 //Setup variable inv vars.
@@ -323,7 +326,8 @@ sell_array =
 	["bottles",50],
 	["uranium",10000],
 	["kidney",9000],
-	["scalpel",1000]
+	["scalpel",1000],
+	["ehering",1000]
 ];
 __CONST__(sell_array,sell_array);
 
@@ -374,7 +378,8 @@ buy_array =
 	["puranium",1000],
 	["ipuranium",9000],
 	["kidney",15000],
-	["scalpel",7500]
+	["scalpel",7500],
+	["ehering",15000]
 ];
 __CONST__(buy_array,buy_array);
 

@@ -40,3 +40,8 @@ if(_diff != (parseNumber _val)) then
 		[[_from,_item,_val,_unit,false],"life_fnc_giveDiff",_from,false] spawn life_fnc_MP;
 	};
 };
+
+if(_item == "ehering" && life_married != "-2") then
+{
+     life_married = (_from getVariable["realname",name _from]);
+};
